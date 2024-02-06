@@ -4,6 +4,6 @@ id:3:initdefault:
 
 rc::bootwait:/etc/rc.d/rc
 
-su:1:wait:/usr/bin/bash
+su:1:respawn:/bin/bash
 
 # End /etc/inittab
