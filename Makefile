@@ -1,6 +1,7 @@
 DESTDIR=
 
 install:
+	@mkdir -vp $(DESTDIR)/sbin/
 	@mkdir -vp $(DESTDIR)/etc/rc.d/init.d
 	@mkdir -vp $(DESTDIR)/etc/rc.d/rc0.d
 	@mkdir -vp $(DESTDIR)/etc/rc.d/rc1.d
