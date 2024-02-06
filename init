@@ -29,3 +29,7 @@ for i in $(ls /etc/rc.d/init.d); do
         echo -e "\r[ ERROR ] Starting init '$i'"
     fi
 done
+
+while 1; do
+    /bin/bash
+done
