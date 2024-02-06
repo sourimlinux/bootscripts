@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Welcome to SourimLinux!"
+
 for i in $(ls /etc/rc.d/init.d); do
     echo "Start initialization ($i)..."
     /etc/rc.d/init.d/$i start

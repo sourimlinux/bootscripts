@@ -12,5 +12,6 @@ install:
 	@mkdir -vp $(DESTDIR)/etc/rc.d/rc5.d
 	@mkdir -vp $(DESTDIR)/etc/rc.d/rc6.d
 
+	@install -v -m755 rc $(DESTDIR)/etc/rc.d/
 	@install -v -m755 init.d/* $(DESTDIR)/etc/rc.d/init.d/
 	@install -v -m644 inittab $(DESTDIR)/etc/

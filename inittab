@@ -1,9 +1,3 @@
-# Begin /etc/inittab
-
-id:3:initdefault:
-
+id:1:initdefault:
 rc::bootwait:/etc/rc.d/rc
-
-su:1:respawn:/bin/bash
-
-# End /etc/inittab
+1:1:respawn:/bin/bash
