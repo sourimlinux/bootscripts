@@ -19,7 +19,7 @@
 echo "Welcome to SourimLinux!"
 
 for i in $(ls /etc/rc.d/init.d); do
-    echo -n "[WAITING] Starting init '$1'"
+    echo -n "[WAITING] Starting init '$i'"
     /etc/rc.d/init.d/$i start &
     wait
     
@@ -30,6 +30,6 @@ for i in $(ls /etc/rc.d/init.d); do
     fi
 done
 
-while 1; do
+while true; do
     /bin/bash
 done
