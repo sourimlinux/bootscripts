@@ -1,0 +1,24 @@
+#!/bin/bash
+
+case "$1" in
+    start)
+        echo -n "Mounting virtual file systems: "
+
+        mkdir -p /{dev,sys,proc}
+
+        echo -n "/dev... "
+        mount -t devtmpfs -o mode=0755,nosuid none /dev || failed=1
+        
+        echo -n "/sys... "
+        mount -t sysfs -o nosuid,noexec,nodev none /sys || failed=1
+
+        echo -n "/proc... "
+        mount -t proc -o nosuid,noexec,nodev none /proc || failed=1
+
+        exit $failed
+    ;;
+    *)
+        echo "Usage: $0 {start}"
+        exit 1
+    ;;
+esac

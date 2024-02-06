@@ -1,0 +1,9 @@
+# Begin /etc/inittab
+
+id:3:initdefault:
+
+rc::bootwait:/etc/rc.d/rc
+
+su:1:wait:/bin/bash
+
+# End /etc/inittab
