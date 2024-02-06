@@ -1,3 +1,0 @@
-id:1:initdefault:
-rc::bootwait:/etc/rc.d/rc
-1:1:respawn:/bin/bash
