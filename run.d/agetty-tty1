@@ -3,7 +3,8 @@
 case $1 in
     start)
         while true; do
-            /sbin/agetty --noclear tty1 9600
+            /bin/bash
+            #/sbin/agetty --noclear tty1 9600
         done
     ;;
 esac
