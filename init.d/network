@@ -1,0 +1,10 @@
+#!/bin/bash
+
+case $1 in
+    start)
+        HOSTNAME=`cat /etc/hostname`
+        [[ -z $HOSTNAME ]] && HOSTNAME="none"
+
+        echo $HOSTNAME > /proc/sys/kernel/hostname
+    ;;
+esac

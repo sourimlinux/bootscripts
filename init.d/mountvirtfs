@@ -8,8 +8,4 @@ case "$1" in
 
         exit $?
     ;;
-    *)
-        echo "Usage: $0 {start}"
-        exit 1
-    ;;
 esac
