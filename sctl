@@ -16,19 +16,24 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-echo "Welcome to SourimLinux!"
+usage() {
+    echo "Usage: $0 {start,stop,restart,status,help} SERVICE"
+    exit 1
+}
+getservice() {
+    service=$1
+    [[ -z "$(dirname $1)" ]] && service="/etc/init.d/$1"
+}
 
-for i in $(ls /etc/rc.d/init.d); do
-    echo -n "[WAITING] Starting init '$i'"
-    sctl start /etc/rc.d/init.d/$i
-    
-    if [[ $? == 0 ]]; then
-        echo -e "\r[SUCCESS] Starting init '$i'"
-    else
-        echo -e "\r[ ERROR ] Starting init '$i'"
-    fi
-done
+[[ -z $1 || -z $2 ]] && usage
 
-for r in $(ls /etc/rc.d/run.d); do
-    sctl start /etc/rc.d/run.d/$r
-done
+case $1 in
+    start | stop | restart | status)
+        getservice $2
+
+        $service $1
+    ;;
+    * | help)
+        usage
+    ;;
+esac

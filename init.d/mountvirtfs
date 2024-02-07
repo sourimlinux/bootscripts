@@ -2,8 +2,6 @@
 
 case "$1" in
     start)
-        mkdir -p /{dev,sys,proc}
-
         mount -t devtmpfs -o mode=0755,nosuid none /dev
         mount -t sysfs -o nosuid,noexec,nodev none /sys
         mount -t proc -o nosuid,noexec,nodev none /proc
